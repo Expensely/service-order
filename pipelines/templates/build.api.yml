@@ -1,0 +1,10 @@
+steps:
+  - template: ./docker/build.yml@templates
+    parameters:
+      target: base
+      arguments: "--build-arg BUILD_NUMBER=$(Build.BuildNumber) --build-arg PAT=$(System.AccessToken)"
+
+  - template: ./docker/build.yml@templates
+    parameters:
+      target: api
+      arguments: "--build-arg BUILD_NUMBER=$(Build.BuildNumber) --build-arg PAT=$(System.AccessToken)"

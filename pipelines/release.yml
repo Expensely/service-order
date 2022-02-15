@@ -1,0 +1,35 @@
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: expensely/azure-devops-templates
+      endpoint: expensely
+
+trigger: none
+
+pr:
+  branches:
+    include:
+      - 'main'
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - template: variables/preview.ap-southeast-2.yml@templates
+
+stages:
+  - stage: build
+    displayName: Build
+    jobs:
+      - job: setup
+        displayName: Setup
+        steps:
+          - checkout: none
+          - template: templates/build.numbers.yml
+      - job: api
+        displayName: Api
+        dependsOn:
+          - setup
+        steps:
+          - template: templates/build.api.yml
