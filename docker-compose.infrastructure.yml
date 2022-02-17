@@ -1,11 +1,11 @@
 version: '3.6'
 services:
   db:
-    container_name: db
+    container_name: multi_carrier_db
     restart: unless-stopped
     image: postgis/postgis:10-3.0-alpine
     environment:
-      POSTGRES_DB: multicarrier
+      POSTGRES_DB: multi_carrier
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: Password21
       PGPORT: 7010
@@ -16,7 +16,7 @@ services:
       - 7110:7010
 
   pgadmin:
-    container_name: pgadmin
+    container_name: multi_carrier_pgadmin
     restart: unless-stopped
     image: dpage/pgadmin4:5.6
     environment:
