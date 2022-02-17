@@ -13,7 +13,7 @@ services:
     volumes:
       - ./local/database/data:/var/lib/postgresql/data
     ports:
-      - 7510:7010
+      - 7110:7010
 
   pgadmin:
     container_name: pgadmin
@@ -28,4 +28,4 @@ services:
     volumes:
       - ./local/pgadmin/data:/var/lib/pgadmin
     ports:
-      - 7511:80
+      - 7111:80
