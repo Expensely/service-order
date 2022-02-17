@@ -5,15 +5,16 @@ resources:
       name: expensely/azure-devops-templates
       endpoint: expensely
 
-trigger: none
-
-pr:
-  branches:
-    include:
-      - 'main'
-
 pool:
   vmImage: ubuntu-latest
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - "main"
+
+pr: none
 
 variables:
   - template: variables/preview.ap-southeast-2.yml@templates

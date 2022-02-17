@@ -1,0 +1,32 @@
+version: '3.6'
+services:
+  migrations:
+    container_name: multi_carrier_migrator
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: migrator-local
+      args:
+        BUILD_NUMBER: 1.0.0.1
+        PAT:
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      ConnectionStrings__Default: Host=db;Port=7110;Database=multi_carrier;Username=admin;Password=Password21
+  
+  api:
+    container_name: multi_carrier_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+      args:
+        BUILD_NUMBER: 1.0.0.1
+        PAT:
+    depends_on:
+      -   migrations
+      -   unit-tests
+    ports:
+      -   7180:80
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      ConnectionStrings__Default: Host=db;Port=7110;Database=multi_carrier;Username=admin;Password=Password21
