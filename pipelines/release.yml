@@ -16,7 +16,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - template: variables/preview.ap-southeast-2.yml@templates
+  - template: variables/production.ap-southeast-2.yml@templates
 
 stages:
   - stage: build
