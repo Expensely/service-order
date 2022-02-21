@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C661E34C-0FAD-48CF-8C72-F399A486C04E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCarrier.Api", "src\MultiCarrier.Api\MultiCarrier.Api.csproj", "{B3C2A779-19D6-4A2D-BC3F-AFD46379BF8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Order.Api", "src\Services.Order.Api\Services.Order.Api.csproj", "{B3C2A779-19D6-4A2D-BC3F-AFD46379BF8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
