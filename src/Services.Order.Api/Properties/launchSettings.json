@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "MultiCarrier.Api": {
+    "Services.Order.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
